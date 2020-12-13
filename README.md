@@ -23,7 +23,7 @@ The functions of equiparate include:
 * min_max_storeys
 * min_max_far
 
-To find out how to use the functions, type "?equal_dwellings", for example, in the console after loading the package from Github.  
+To find out how to use the functions, type "?equal_dwellings", for example, in the console after loading the package.  
 
 ```
 # Compare sites with an equal number of dwellings
