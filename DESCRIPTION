@@ -1,0 +1,23 @@
+Package: equiparate
+Title: Compare measures of density using heatmaps.
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Liam",
+           family = "Bolton",
+           role = c("aut", "cre"),
+           email = "liamthomasbolton@gmail.com")
+Description: equiparate creates comparative visualisations of density.
+Depends:
+    R (>= 3.1.0),
+    dplyr,
+    reshape2,
+    gtools,
+    data.table,
+    sfsmisc,
+    ggplot2,
+    viridis
+License: `use_mit_license()`
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
