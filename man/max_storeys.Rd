@@ -16,7 +16,7 @@ max_storeys(nrow, ncol, max_storey, filename)
 \item{filename}{Filename for PDF}
 }
 \value{
-A PDF with multiple heatmaps.
+A PDF with multiple heatmaps and the number of combinations.
 }
 \description{
 Function for specifying maximum storeys and creating heatmaps that show all combinations.

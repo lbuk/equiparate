@@ -6,7 +6,7 @@
 #' @param ncol Number of columns
 #' @param max_far Maximum FAR
 #' @param filename Filename for PDF
-#' @return A PDF with multiple heatmaps.
+#' @return A PDF with multiple heatmaps and the number of combinations.
 #' @examples
 #' max_far(nrow = 2, ncol = 2, max_far = 6/4, filename = "max_far_nrow2_ncol2_maxfar6div4.pdf")
 #' @export

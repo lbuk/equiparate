@@ -7,7 +7,7 @@
 #' @param min_storey Minimum storey
 #' @param max_storey Maximum storey
 #' @param filename Filename for PDF
-#' @return A PDF with multiple heatmaps.
+#' @return A PDF with multiple heatmaps and the number of combinations.
 #' @examples
 #' min_max_storeys(nrow = 1, ncol = 3, min_storey = 3, max_storey = 6, filename = "min_max_storeys_nrow1_ncol3_min3_max6.pdf")
 #' @export

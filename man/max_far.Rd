@@ -16,7 +16,7 @@ max_far(nrow, ncol, max_far, filename)
 \item{filename}{Filename for PDF}
 }
 \value{
-A PDF with multiple heatmaps.
+A PDF with multiple heatmaps and the number of combinations.
 }
 \description{
 Function for specifying maximum FAR and creating heatmaps that show all combinations.

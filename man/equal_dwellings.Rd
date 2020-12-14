@@ -16,7 +16,7 @@ equal_dwellings(nrow, ncol, dwellings, filename)
 \item{filename}{Filename for PDF}
 }
 \value{
-A PDF with multiple heatmaps.
+A PDF with multiple heatmaps and the number of combinations.
 }
 \description{
 Function for creating heatmaps of sites that have an equal number of dwellings.

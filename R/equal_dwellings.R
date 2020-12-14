@@ -6,7 +6,7 @@
 #' @param ncol Number of columns
 #' @param dwellings Number of dwellings
 #' @param filename Filename for PDF
-#' @return A PDF with multiple heatmaps.
+#' @return A PDF with multiple heatmaps and the number of combinations.
 #' @examples
 #' equal_dwellings(nrow = 3, ncol = 2, dwellings = 4, filename = "equal_dwellings_nrow3_ncol2_dwellings4.pdf")
 #' @export
@@ -40,8 +40,7 @@ equal_dwellings = function(nrow, ncol, dwellings, filename) {
     mutate(z = ave(value, L1, FUN = function(x) sum(x == 0))) %>%
     mutate(s = ave(value, L1, FUN=sum)) %>%
     mutate(ID = match(L1, unique(L1))) %>%
-    filter(s == dwellings) %>%
-    arrange(desc(z))
+    filter(s == dwellings)
 
   # Calculate number of combinations and print
   n_combinations =

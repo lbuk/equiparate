@@ -6,7 +6,7 @@
 #' @param ncol Number of columns
 #' @param far Floor Area Ratio as a fraction
 #' @param filename Filename for PDF
-#' @return A PDF with multiple heatmaps.
+#' @return A PDF with multiple heatmaps and the number of combinations.
 #' @examples
 #' equal_far(nrow = 1, ncol = 3, far = 6/3, filename = "equal_far_nrow1_ncol3_far2.pdf")
 #' @export
@@ -47,8 +47,7 @@ equal_far = function(nrow, ncol, far, filename) {
     mutate(z = ave(value, L1, FUN = function(x) sum(x == 0))) %>%
     mutate(s = ave(value, L1, FUN=sum)) %>%
     mutate(ID = match(L1, unique(L1))) %>%
-    filter(s == storeys) %>%
-    arrange(desc(z))
+    filter(s == storeys)
 
   # Calculate number of combinations and print
   n_combinations =
