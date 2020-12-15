@@ -36,7 +36,6 @@ max_storeys = function(nrow, ncol, max_storey, filename) {
     l %>%
     reshape2::melt() %>%
     filter(Var1 <= nrow, Var2 <= ncol)  %>%
-    mutate(z = ave(value, L1, FUN = function(x) sum(x == 0))) %>%
     mutate(s = ave(value, L1, FUN=sum)) %>%
     mutate(ID = match(L1, unique(L1))) %>%
     filter(value <= max_storey)

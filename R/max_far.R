@@ -43,7 +43,6 @@ max_far = function(nrow, ncol, max_far, filename) {
     reshape2::melt() %>%
     filter(Var1 <= nrow, Var2 <= ncol) %>%
     mutate(s = ave(value, L1, FUN=sum)) %>%
-    mutate(z = ave(value, L1, FUN = function(x) sum(x == 0))) %>%
     mutate(value_far = value / (max(Var1) * max(Var2))) %>%
     mutate(s_far = ave(value_far, L1, FUN=sum)) %>%
     filter(s_far <= max_far, s_far > 0) %>%
