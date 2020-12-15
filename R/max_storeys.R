@@ -70,13 +70,15 @@ max_storeys = function(nrow, ncol, max_storey, filename) {
     summarise(sum = sum(uniqueid))
 
   cat("Number of possible combinations:", n_combinations$sum, " ")
+  
+  if(n_combinations$sum < 250){b = 1} else if(n_combinations$sum >= 250){b = 0.05}
 
   col = viridis(max_storey, option = "cividis")
 
   # Visualise using heatmaps
   plot_l_max_storey_df =
     ggplot(data = l_max_storey_df, mapping = aes(x = factor(Var2), y = factor(Var1))) +
-    geom_tile(aes(fill = factor(value)), colour = "#000000", size = 1) +
+    geom_tile(aes(fill = factor(value)), colour = "#000000", size = b) +
     scale_fill_manual(values = col) +
     coord_equal() +
     facet_wrap(~ID) +
