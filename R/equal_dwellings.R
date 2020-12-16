@@ -41,17 +41,20 @@ equal_dwellings = function(nrow, ncol, dwellings, filename) {
     mutate(ID = match(L1, unique(L1))) %>%
     filter(s == dwellings)
 
-  # Calculate number of combinations and print
+  # Calculate number of combinations
   n_combinations =
     l_dwellings_df %>%
     group_by(ID) %>%
     summarise(uniqueid = n_distinct(ID)) %>%
     summarise(sum = sum(uniqueid))
-
+  
+  # Print number of possible combinations
   cat("Number of possible combinations:", n_combinations$sum, " ")
   
-  if(n_combinations$sum < 250){b = 1} else if(n_combinations$sum >= 250){b = 0.05}
+  # Set border width for tiles
+  if(n_combinations$sum < 250){b = 1} else if(n_combinations$sum >= 250 & n_combinations$sum < 500){b = 0.2} else{b = 0.05}
 
+  # Palette from viridis package
   col = viridis(dwellings+1, option = "plasma")
 
   # Heatmaps

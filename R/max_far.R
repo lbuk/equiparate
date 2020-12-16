@@ -70,17 +70,20 @@ max_far = function(nrow, ncol, max_far, filename) {
       mutate(ID = rep(1:nrow(m_e), each=nrow*ncol, length.out=nrow(m_e)))
   }
 
-  # Calculate number of combinations and print
+  # Calculate number of combinations
   n_combinations =
     l_max_far_df %>%
     group_by(ID) %>%
     summarise(uniqueid = n_distinct(ID)) %>%
     summarise(sum = sum(uniqueid))
 
+  # Print number of possible combinations
   cat("Number of possible combinations:", n_combinations$sum, " ")
   
-  if(n_combinations$sum < 250){b = 1} else if(n_combinations$sum >= 250){b = 0.05}
+  # Set border width for tiles
+  if(n_combinations$sum < 250){b = 1} else if(n_combinations$sum >= 250 & n_combinations$sum < 500){b = 0.2} else{b = 0.05}
 
+  # Palette from viridis package
   col = viridis(max(l_max_far_df$value)+1, option = "cividis")
 
   # Heatmaps
