@@ -18,7 +18,7 @@ min_max_far(nrow, ncol, min_far, max_far, filename)
 \item{filename}{Filename for PDF}
 }
 \value{
-A PDF with multiple heatmaps and the number of combinations.
+A PDF with multiple heatmaps and a printing of the number of combinations in the console.
 }
 \description{
 Function for specifying minimum and maximum FAR and creating heatmaps that show all combinations.

@@ -6,7 +6,7 @@
 #' @param ncol Number of columns
 #' @param far Floor Area Ratio as a fraction
 #' @param filename Filename for PDF
-#' @return A PDF with multiple heatmaps and the number of combinations.
+#' @return A PDF with multiple heatmaps and a printing of the number of combinations in the console.
 #' @examples
 #' equal_far(nrow = 1, ncol = 3, far = 6/3, filename = "equal_far_nrow1_ncol3_far2.pdf")
 #' @export

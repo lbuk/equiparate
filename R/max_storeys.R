@@ -6,7 +6,7 @@
 #' @param ncol Number of columns
 #' @param max_storey Maximum storey
 #' @param filename Filename for PDF
-#' @return A PDF with multiple heatmaps and the number of combinations.
+#' @return A PDF with multiple heatmaps and a printing of the number of combinations in the console.
 #' @examples
 #' max_storeys(nrow = 1, ncol = 3, max_storey = 3, filename = "max_storeys_nrow1_ncol3_maxstorey3.pdf")
 #' @export

@@ -16,7 +16,7 @@ equal_far(nrow, ncol, far, filename)
 \item{filename}{Filename for PDF}
 }
 \value{
-A PDF with multiple heatmaps and the number of combinations.
+A PDF with multiple heatmaps and a printing of the number of combinations in the console.
 }
 \description{
 Function for creating heatmaps of sites that have an equal measure of FAR.

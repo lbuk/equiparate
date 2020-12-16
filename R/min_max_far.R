@@ -7,7 +7,7 @@
 #' @param min_far Minimum FAR
 #' @param max_far Maximum FAR
 #' @param filename Filename for PDF
-#' @return A PDF with multiple heatmaps and the number of combinations.
+#' @return A PDF with multiple heatmaps and a printing of the number of combinations in the console.
 #' @examples
 #' min_max_far(nrow = 2, ncol = 2, min_far = 3/4, max_far = 6/4, filename = "min_max_far_nrow2_ncol2_minfar3div4_maxfar6div4.pdf")
 #' @export

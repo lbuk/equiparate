@@ -6,7 +6,7 @@
 #' @param ncol Number of columns
 #' @param dwellings Number of dwellings
 #' @param filename Filename for PDF
-#' @return A PDF with multiple heatmaps and the number of combinations.
+#' @return A PDF with multiple heatmaps and a printing of the number of combinations in the console.
 #' @examples
 #' equal_dwellings(nrow = 3, ncol = 2, dwellings = 4, filename = "equal_dwellings_nrow3_ncol2_dwellings4.pdf")
 #' @export
