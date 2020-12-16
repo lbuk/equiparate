@@ -11,9 +11,9 @@ min_max_far(nrow, ncol, min_far, max_far, filename)
 
 \item{ncol}{Number of columns}
 
-\item{min_far}{Minimum FAR}
+\item{min_far}{Minimum FAR as a fraction}
 
-\item{max_far}{Maximum FAR}
+\item{max_far}{Maximum FAR as a fraction}
 
 \item{filename}{Filename for PDF}
 }

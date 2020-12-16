@@ -11,7 +11,7 @@ max_far(nrow, ncol, max_far, filename)
 
 \item{ncol}{Number of columns}
 
-\item{max_far}{Maximum FAR}
+\item{max_far}{Maximum FAR as a fraction}
 
 \item{filename}{Filename for PDF}
 }

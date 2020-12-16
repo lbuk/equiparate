@@ -4,7 +4,7 @@
 #'
 #' @param nrow Number of rows
 #' @param ncol Number of columns
-#' @param max_far Maximum FAR
+#' @param max_far Maximum FAR as a fraction
 #' @param filename Filename for PDF
 #' @return A PDF with multiple heatmaps and a printing of the number of combinations in the console.
 #' @examples
