@@ -52,8 +52,8 @@ equal_far = function(nrow, ncol, far, filename) {
   n_combinations =
     l_far_df %>%
     group_by(ID) %>%
-    summarise(uniqueid = n_distinct(ID)) %>%
-    summarise(sum = sum(uniqueid))
+    summarise(uniqueid = n_distinct(ID), .groups = 'drop') %>%
+    summarise(sum = sum(uniqueid), .groups = 'drop')
 
   # Print number of possible combinations
   cat("Number of possible combinations:", n_combinations$sum, " ")
