@@ -46,5 +46,5 @@ equiparate::min_max_storeys(nrow = 1, ncol = 3, min_storey = 3, max_storey = 6, 
 # Specify the number of columns, rows and maximum FAR and the filename. It prints the number of combinations and exports a PDF. Note: the rendering of the charts and the creation of the PDFs will take longer for calculations that generate more combinations.
 equiparate::max_far(nrow = 3, ncol = 1, max_far = 4/3, filename = "max_far_nrow3_ncol1_maxfar4div3_chart.pdf")
 ```
-![](https://github.com/lbuk/equiparate/blob/master/img/max_far_nrow3_ncol1_maxfar4div3_chart.png)
+![](https://github.com/lbuk/equiparate/blob/master/img/github_max_far_nrow3_ncol1_maxfar4div3_chart.png)
 
