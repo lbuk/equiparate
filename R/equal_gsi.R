@@ -57,7 +57,7 @@ equal_gsi = function(nrow, ncol, gsi, filename) {
   cat("Number of possible combinations:", n_combinations$sum, " ")
   
   # Set border width for tiles
-  if(n_combinations$sum < 100){b = 0.5} else if(n_combinations$sum >= 100 & n_combinations$sum < 500){b = 0.3} else{b = 0.06}
+  if(n_combinations$sum < 250){b = 0.25} else if(n_combinations$sum >= 250 & n_combinations$sum < 500){b = 0.1} else{b = 0.02}
   
   col = c('1' = "#9ecae1", '0' = "#ffffff")
   
