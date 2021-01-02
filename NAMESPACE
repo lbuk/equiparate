@@ -2,6 +2,7 @@
 
 export(equal_dwellings)
 export(equal_far)
+export(equal_gsi)
 export(max_far)
 export(max_storeys)
 export(min_max_far)
