@@ -18,12 +18,13 @@ library(equiparate)
 The functions of equiparate include: 
 * equal_dwellings
 * equal_far
+* equal_gsi
 * max_storeys
 * max_far
 * min_max_storeys
 * min_max_far
 
-To find out how to use the functions, type "?equal_dwellings", for example, in the console after loading the package.  
+To find out how to use a function, type ?equal_dwellings, for example, into the console after loading the package.  
 
 ```
 # Compare sites with an equal number of dwellings
