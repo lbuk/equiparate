@@ -57,7 +57,7 @@ equal_gsi = function(nrow, ncol, gsi, filename) {
   cat("Number of possible combinations:", n_combinations$sum, " ")
   
   # Set border width for tiles
-  if(n_combinations$sum < 250){b = 0.05} else if(n_combinations$sum >= 250 & n_combinations$sum < 500){b = 0.02} else{b = 0.01}
+  if(n_combinations$sum < 250){b = 0.08} else if(n_combinations$sum >= 250 & n_combinations$sum < 500){b = 0.03} else{b = 0.01}
   
   col = c('1' = "#cda513", '0' = "#ffffff")
   
@@ -65,7 +65,7 @@ equal_gsi = function(nrow, ncol, gsi, filename) {
   plot_l_gsi_df =
     ggplot(data = l_gsi_df, mapping = aes(x = factor(Var2), y = factor(Var1))) +
     geom_tile(aes(fill = factor(value)), colour = "#000000", size = b) +
-    scale_fill_manual(values=col, labels = c('1' = "BUILT", '0' = "NON-BUILT")) +
+    scale_fill_manual(values=col, breaks = c("1"), labels = c("BUILT")) +
     coord_equal() +
     facet_wrap(~ID) + 
     labs(fill = "") +
