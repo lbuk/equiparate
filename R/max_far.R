@@ -81,7 +81,7 @@ max_far = function(nrow, ncol, max_far, filename) {
   cat("Number of possible combinations:", n_combinations$sum, " ")
   
   # Set border width for tiles
-  if(n_combinations$sum < 250){b = 0.25} else if(n_combinations$sum >= 250 & n_combinations$sum < 500){b = 0.1} else{b = 0.02}
+  if(n_combinations$sum < 250){b = 0.2} else if(n_combinations$sum >= 250 & n_combinations$sum < 500){b = 0.1} else{b = 0.02}
 
   # Palette from viridis package
   col = viridis(max(l_max_far_df$value)+1, option = "cividis")
