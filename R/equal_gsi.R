@@ -64,7 +64,7 @@ equal_gsi = function(nrow, ncol, gsi, filename) {
   # Heatmaps
   plot_l_gsi_df =
     ggplot(data = l_gsi_df, mapping = aes(x = factor(Var2), y = factor(Var1))) +
-    geom_tile(aes(fill = factor(value)), colour = "#9ecae1", size = b) +
+    geom_tile(aes(fill = factor(value)), colour = "#000000", size = b) +
     scale_fill_manual(values=col, labels = c('1' = "BUILT", '0' = "NON-BUILT")) +
     coord_equal() +
     facet_wrap(~ID) + 
