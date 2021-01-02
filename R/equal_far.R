@@ -59,7 +59,7 @@ equal_far = function(nrow, ncol, far, filename) {
   cat("Number of possible combinations:", n_combinations$sum, " ")
   
   # Set border width for tiles
-  if(n_combinations$sum < 250){b = 1} else if(n_combinations$sum >= 250 & n_combinations$sum < 500){b = 0.2} else{b = 0.05}
+  if(n_combinations$sum < 250){b = 0.55} else if(n_combinations$sum >= 250 & n_combinations$sum < 500){b = 0.2} else{b = 0.05}
 
   # Palette from viridis package
   col_chart = viridis(storeys+1, option = "plasma")
