@@ -49,7 +49,7 @@ max_far(nrow = 3, ncol = 1, max_far = 4/3, filename = "max_far_nrow3_ncol1_maxfa
 ![](https://github.com/lbuk/equiparate/blob/master/img/max_far_nrow3_ncol1_maxfar4div3_chart.png)
 
 ```
-# Chart all combinations up to a specified maximum Ground Space Index (GSI)
+# Compare sites with an equal Ground Space Index (GSI)
 # Specify the number of columns, rows and GSI and the filename. It prints the number of combinations and exports a PDF. Note: the rendering of the charts and the creation of the PDFs will take longer for calculations that generate more combinations.
 equal_gsi(nrow = 4, ncol = 3, gsi = 5/6, filename = "equal_gsi_nrow4_ncol3_gsi5div6.pdf")
 ```
