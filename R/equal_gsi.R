@@ -59,7 +59,7 @@ equal_gsi = function(nrow, ncol, gsi, filename) {
   # Set border width for tiles
   if(n_combinations$sum < 250){b = 0.05} else if(n_combinations$sum >= 250 & n_combinations$sum < 500){b = 0.02} else{b = 0.01}
   
-  col = c('1' = "#9ecae1", '0' = "#ffffff")
+  col = c('1' = "#ffeda0", '0' = "#ffffff")
   
   # Heatmaps
   plot_l_gsi_df =
