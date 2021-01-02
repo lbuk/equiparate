@@ -35,8 +35,7 @@ equal_dwellings(nrow = 3, ncol = 2, dwellings = 4, filename = "equal_dwellings_n
 
 ```
 # Chart all combinations between a specified minimum and maximum storey count
-# Specify the number of columns, rows and minumum storey, maximum storey and the filename. It prints the number of combinations and exports a PDF.
-# Note: the rendering of the charts and the creation of the PDFs will take longer for calculations that generate more combinations.
+# Specify the number of columns, rows and minumum storey, maximum storey and the filename. It prints the number of combinations and exports a PDF. Note: the rendering of the charts and the creation of the PDFs will take longer for calculations that generate more combinations.
 min_max_storeys(nrow = 1, ncol = 3, min_storey = 3, max_storey = 6, filename = "min_max_storeys_nrow1_ncol3_min3_max6_chart.pdf")
 ```
 ![](https://github.com/lbuk/equiparate/blob/master/img/min_max_storeys_nrow1_ncol3_min3_max6_chart.png)
