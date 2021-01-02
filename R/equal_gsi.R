@@ -56,15 +56,12 @@ equal_gsi = function(nrow, ncol, gsi, filename) {
   
   cat("Number of possible combinations:", n_combinations$sum, " ")
   
-  # Set border width for tiles
-  if(n_combinations$sum < 250){b = 0.2} else if(n_combinations$sum >= 250 & n_combinations$sum < 500){b = 0.1} else{b = 0.02}
-  
   col = c('1' = "#9ecae1", '0' = "#ffffff")
   
   # Heatmaps
   plot_l_gsi_df =
     ggplot(data = l_gsi_df, mapping = aes(x = factor(Var2), y = factor(Var1))) +
-    geom_tile(aes(fill = factor(value)), colour = "#000000", size = b) +
+    geom_tile(aes(fill = factor(value)), colour = "#000000", size = 0) +
     scale_fill_manual(values=col, labels = c('1' = "BUILT", '0' = "NON-BUILT")) +
     coord_equal() +
     facet_wrap(~ID) + 
