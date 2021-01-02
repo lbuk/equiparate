@@ -47,6 +47,29 @@ equal_gsi = function(nrow, ncol, gsi, filename) {
     mutate(ID = match(L1, unique(L1))) %>%
     arrange(desc(z))
   
+  # Remove duplicate rows
+  if(ncol == 1 | nrow == 1){
+    x = split(l_gsi_df$value, l_gsi_df$ID, l_gsi_df$Var1, l_gsi_df$Var2)
+    u = unique(x)
+    
+    df_m = data.frame(matrix(unlist(u)))
+    
+    value =
+      df_m %>%
+      rename(value = matrix.unlist.u..)
+    
+    m_e = as.data.frame(matrix(0, ncol = 2, nrow = nrow(value)))
+    
+    colnames(m_e) = c("Var1", "Var2")
+    
+    l_gsi_df =
+      m_e %>%
+      mutate(Var1 = rep(1:nrow, each=1, length.out=nrow(m_e))) %>%
+      mutate(Var2 = rep(1:ncol, each=1, length.out=nrow(m_e))) %>%
+      cbind(value) %>%
+      mutate(ID = rep(1:nrow(m_e), each=nrow*ncol, length.out=nrow(m_e)))
+  }
+  
   # Calculate number of combinations and print
   n_combinations = 
     l_gsi_df %>% 
