@@ -42,10 +42,8 @@ equal_gsi = function(nrow, ncol, gsi, filename) {
     filter(Var1 <= nrow, Var2 <= ncol)  %>%
     mutate(z = ave(value, L1, FUN = function(x) sum(x == 0))) %>%
     mutate(s = ave(value, L1, FUN=sum)) %>%
-    mutate(m = ave(value, L1, FUN = function(x) max(x))) %>%
-    filter(m == 1) %>%
-    mutate(ID = match(L1, unique(L1))) %>%
-    arrange(desc(z))
+    filter(s == number_c) %>%
+    mutate(ID = match(L1, unique(L1)))
   
   # Calculate number of combinations and print
   n_combinations = 
