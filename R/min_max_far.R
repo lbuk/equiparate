@@ -38,7 +38,7 @@ min_max_far = function(nrow, ncol, min_far, max_far, filename) {
 
   l = Filter(Negate(is.null), l);
 
-  # Filter dataset
+  # Create dataframe and filter
   l_min_max_far_df =
     l %>%
     reshape2::melt() %>%
@@ -73,14 +73,13 @@ min_max_far = function(nrow, ncol, min_far, max_far, filename) {
       mutate(ID = rep(1:nrow(m_e), each=nrow*ncol, length.out=nrow(m_e)))
   }
 
-  # Calculate number of combinations
+  # Calculate number of combinations and print in console
   n_combinations =
     l_min_max_far_df %>%
     group_by(ID) %>%
     summarise(uniqueid = n_distinct(ID), .groups = 'drop') %>%
     summarise(sum = sum(uniqueid), .groups = 'drop')
 
-  # Print number of possible combinations
   cat("Number of possible combinations:", n_combinations$sum, " ")
   
   # Set border width for tiles
@@ -120,5 +119,6 @@ min_max_far = function(nrow, ncol, min_far, max_far, filename) {
 
   if(dev.cur() > 1) dev.off()
 
+  # Export to PDF
   ggsave(filename, plot_l_min_max_far_df, device = "pdf", height = 7, width = 7)
 }

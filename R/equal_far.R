@@ -40,6 +40,7 @@ equal_far = function(nrow, ncol, far, filename) {
 
   l = Filter(Negate(is.null), l);
 
+  # Create dataframe and filter
   l_far_df =
     l %>%
     reshape2::melt() %>%
@@ -48,7 +49,7 @@ equal_far = function(nrow, ncol, far, filename) {
     mutate(ID = match(L1, unique(L1))) %>%
     filter(s == storeys)
 
-  # Calculate number of combinations
+  # Calculate number of combinations and print in console
   n_combinations =
     l_far_df %>%
     group_by(ID) %>%
@@ -95,6 +96,6 @@ equal_far = function(nrow, ncol, far, filename) {
 
   if(dev.cur() > 1) dev.off()
 
+  # Export to PDF
   ggsave(filename, plot_equal_far_df, device = "pdf", height = 7, width = 7)
-
 }

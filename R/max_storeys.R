@@ -31,7 +31,7 @@ max_storeys = function(nrow, ncol, max_storey, filename) {
 
   l = Filter(Negate(is.null), l);
 
-  # Data frame
+  # Create dataframe and filter
   l_max_storey_df =
     l %>%
     reshape2::melt() %>%
@@ -62,14 +62,13 @@ max_storeys = function(nrow, ncol, max_storey, filename) {
       mutate(ID = rep(1:nrow(m_e), each=nrow*ncol, length.out=nrow(m_e)))
   }
 
-  # Calculate number of combinations
+  # Calculate number of combinations and print in console
   n_combinations =
     l_max_storey_df %>%
     group_by(ID) %>%
     summarise(uniqueid = n_distinct(ID), .groups = 'drop') %>%
     summarise(sum = sum(uniqueid), .groups = 'drop')
 
-  # Print number of possible combinations
   cat("Number of possible combinations:", n_combinations$sum, " ")
   
   # Set border width for tiles
@@ -109,5 +108,6 @@ max_storeys = function(nrow, ncol, max_storey, filename) {
 
   if(dev.cur() > 1) dev.off()
 
+  # Export to PDF
   ggsave(filename, plot_l_max_storey_df, device = "pdf", height = 7, width = 7)
 }

@@ -37,7 +37,7 @@ max_far = function(nrow, ncol, max_far, filename) {
 
   l = Filter(Negate(is.null), l);
 
-  # Filter dataset
+  # Create dataframe and filter
   l_max_far_df =
     l %>%
     reshape2::melt() %>%
@@ -47,7 +47,7 @@ max_far = function(nrow, ncol, max_far, filename) {
     filter(s_far <= max_far, s_far > 0) %>%
     mutate(ID = match(L1, unique(L1)))
 
-  # Remove duplicate rows
+  # Remove duplicate rows 
   if(ncol == 1 | nrow == 1){
     x = split(l_max_far_df$value, l_max_far_df$ID, l_max_far_df$Var1, l_max_far_df$Var2)
     u = unique(x)
@@ -70,14 +70,13 @@ max_far = function(nrow, ncol, max_far, filename) {
       mutate(ID = rep(1:nrow(m_e), each=nrow*ncol, length.out=nrow(m_e)))
   }
 
-  # Calculate number of combinations
+  # Calculate number of combinations and print in console
   n_combinations =
     l_max_far_df %>%
     group_by(ID) %>%
     summarise(uniqueid = n_distinct(ID), .groups = 'drop') %>%
     summarise(sum = sum(uniqueid), .groups = 'drop')
 
-  # Print number of possible combinations
   cat("Number of possible combinations:", n_combinations$sum, " ")
   
   # Set border width for tiles
@@ -117,6 +116,6 @@ max_far = function(nrow, ncol, max_far, filename) {
 
   if(dev.cur() > 1) dev.off()
 
+  # Export to PDF
   ggsave(filename, plot_l_max_far_df, device = "pdf", height = 7, width = 7)
-
 }

@@ -35,7 +35,7 @@ equal_gsi = function(nrow, ncol, gsi, filename) {
   
   l = Filter(Negate(is.null), l);
   
-  # Filter dataframe
+  # Create dataframe and filter
   l_gsi_df = 
     l %>%
     reshape2::melt() %>%
@@ -45,7 +45,7 @@ equal_gsi = function(nrow, ncol, gsi, filename) {
     filter(s == number_c) %>%
     mutate(ID = match(L1, unique(L1)))
   
-  # Calculate number of combinations and print
+  # Calculate number of combinations and print in console
   n_combinations = 
     l_gsi_df %>% 
     group_by(ID) %>%
@@ -57,7 +57,8 @@ equal_gsi = function(nrow, ncol, gsi, filename) {
   # Set border width for tiles
   if(n_combinations$sum < 250){b = 0.08} else if(n_combinations$sum >= 250 & n_combinations$sum < 500){b = 0.03} else{b = 0.01}
   
-  col = c('1' = "#cda513", '0' = "#ffffff")
+  # Palette
+  col = c('1' = "#c59c05", '0' = "#ffffff")
   
   # Heatmaps
   plot_l_gsi_df =
@@ -90,6 +91,7 @@ equal_gsi = function(nrow, ncol, gsi, filename) {
   
   if(dev.cur() > 1) dev.off()
   
+  # Export to PDF
   ggsave(filename, plot_l_gsi_df, device = "pdf", height = 7, width = 7)
 }
 

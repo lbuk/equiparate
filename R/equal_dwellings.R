@@ -32,7 +32,7 @@ equal_dwellings = function(nrow, ncol, dwellings, filename) {
 
   l = Filter(Negate(is.null), l);
 
-  # Filter dataframe
+  # Create dataframe and filter
   l_dwellings_df =
     l %>%
     reshape2::melt() %>%
@@ -41,7 +41,7 @@ equal_dwellings = function(nrow, ncol, dwellings, filename) {
     mutate(ID = match(L1, unique(L1))) %>%
     filter(s == dwellings)
 
-  # Calculate number of combinations
+  # Calculate number of combinations and print in console
   n_combinations =
     l_dwellings_df %>%
     group_by(ID) %>%
@@ -87,6 +87,7 @@ equal_dwellings = function(nrow, ncol, dwellings, filename) {
     guides(fill = guide_legend(nrow = 1, label.position = "bottom", title.position = "top", title.hjust = 0.5))
 
   if(dev.cur() > 1) dev.off()
-
+  
+  # Export to PDF
   ggsave(filename, plot_equal_dwellings_df, device = "pdf", height = 7, width = 7)
 }

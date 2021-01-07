@@ -32,7 +32,7 @@ min_max_storeys = function(nrow, ncol, min_storey, max_storey, filename) {
 
   l = Filter(Negate(is.null), l);
 
-  # Filter dataset
+  # Create dataframe and filter
   l_min_max_storeys_df =
     l %>%
     reshape2::melt() %>%
@@ -65,7 +65,7 @@ min_max_storeys = function(nrow, ncol, min_storey, max_storey, filename) {
       mutate(ID = rep(1:nrow(m_e), each=nrow*ncol, length.out=nrow(m_e)))
   }
 
-  # Calculate number of combinations
+  # Calculate number of combinations and print in console
   n_combinations =
     l_min_max_storeys_df %>%
     group_by(ID) %>%
@@ -81,7 +81,7 @@ min_max_storeys = function(nrow, ncol, min_storey, max_storey, filename) {
   # Palette from viridis package
   col = viridis((max_storey - min_storey)+1, option = "viridis")
 
-  # Visualise using heatmaps
+  # Heatmaps
   plot_l_min_max_storeys_df =
     ggplot(data = l_min_max_storeys_df, mapping = aes(x = factor(Var2), y = factor(Var1))) +
     geom_tile(aes(fill = factor(value)), colour = "#000000", size = b) +
@@ -112,5 +112,6 @@ min_max_storeys = function(nrow, ncol, min_storey, max_storey, filename) {
 
   if(dev.cur() > 1) dev.off()
 
+  # Export to PDF
   ggsave(filename, plot_l_min_max_storeys_df, device = "pdf", height = 7, width = 7)
 }
