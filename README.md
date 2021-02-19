@@ -1,7 +1,7 @@
 # equiparate
 
 ### Overview
-equiparate is an R package for visualising urban density. Encompassing a number of density tools, it creates comparative heatmaps.
+equiparate is an R package for creating comparative visualisations of urban density.
 
 ### Installation
 ```
