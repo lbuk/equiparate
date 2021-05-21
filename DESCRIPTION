@@ -9,8 +9,8 @@ Authors@R:
 Description: equiparate creates comparative visualisations of density.
 Depends:
     R (>= 3.1.0),
-    reshape2,
     dplyr,
+    reshape2,
     gtools,
     data.table,
     sfsmisc,
